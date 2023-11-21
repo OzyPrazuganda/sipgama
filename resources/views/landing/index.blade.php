@@ -80,7 +80,7 @@
 
                 <div style="margin-top:-400px">
                     <div class="text text-center ftco-animate">
-                        <h1>Sistem Informasi Pengelolaan <br>Perumahan Villa Gading Mayang COBA</h1>
+                        <h1>Sistem Informasi Pengelolaan <br>Perumahan Villa Gading Mayang COBAAN</h1>
                     </div>
                 </div>
             </div>
