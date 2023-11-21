@@ -41,7 +41,8 @@
     </nav>
     <!-- END nav -->
 
-    <div class="hero-wrap ftco-degree-bg" style="background-image: url('{{ asset('uptown-master') }}/images/110.jpg');"
+    <div class="hero-wrap ftco-degree-bg"
+        style="background-image: url('{{ asset('uptown-master') }}/images/bg_1.jpg');"
         data-stellar-background-ratio="0.5">
         <div class="container">
 
@@ -79,7 +80,7 @@
 
                 <div style="margin-top:-400px">
                     <div class="text text-center ftco-animate">
-                        <h1>Sistem Informasi Pengelolaan <br>Perumahan Villa Gading Mayang</h1>
+                        <h1>Sistem Informasi Pengelolaan <br>Perumahan Villa Gading Mayang COBAAN</h1>
                     </div>
                 </div>
             </div>
