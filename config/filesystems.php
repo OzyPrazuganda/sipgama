@@ -38,7 +38,7 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => '/home/sipgamam/public_html',
+            'root' => '/home/sipgamam/public_html/storage',
             // 'root' => storage_path('app/public'),
             // 'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
@@ -56,6 +56,11 @@ return [
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
         ],
+
+        'bukti_pembayaran' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/bukti_pembayaran')
+        ]
 
     ],
 
