@@ -16,9 +16,9 @@ class PembayaranController extends Controller
     {
         return view('pembayaran.index', [
             'title' => 'Pembayaran Iuran',
-            'pembayaran' => Pembayaran::all(['*']),
-            'rumah' => Rumah::all(['*']),
-            'metode_pembayaran' => MetodePembayaran::all(['*']),
+            'pembayaran' => Pembayaran::where('rumah_id', auth()->user()->rumah->id)->get(),
+            // 'rumah' => Rumah::all(['*']),
+            'metode_pembayaran' => MetodePembayaran::all(),
         ]);
     }
 

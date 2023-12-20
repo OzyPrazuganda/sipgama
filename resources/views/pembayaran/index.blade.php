@@ -121,7 +121,7 @@
                                     <table
                                         class="table text-nowrap mb-0 align-middle fs-3 table-hover table-responsive">
                                         <thead class="text-dark">
-                                            @if ($pembayaran->where('rumah_id', auth()->user()->rumah->id)->isEmpty())
+                                            @if (count($pembayaran) == 0)
                                                 {{-- empty header --}}
                                             @else
                                                 <tr>
@@ -152,36 +152,36 @@
 
                                         <tbody>
                                             @foreach ($pembayaran as $i)
-                                                @if ($i->rumah_id === auth()->user()->rumah->id)
-                                                    <tr>
-                                                        <td>{{ $i->created_at->format('d F Y') }}</td>
-                                                        <td>{{ $i->rumah->nomor_rumah }}</td>
-                                                        <td>{{ $i->bulan }}</td>
-                                                        <td>{{ $i->metode_pembayaran->metode_pembayaran }}</td>
-                                                        <td>Rp. {{ number_format($i->total_bayar, 0, ',', '.') }}
-                                                        </td>
+                                                {{-- @if ($i->rumah_id === auth()->user()->rumah->id) --}}
+                                                <tr>
+                                                    <td>{{ $i->created_at->format('d F Y') }}</td>
+                                                    <td>{{ $i->rumah->nomor_rumah }}</td>
+                                                    <td>{{ $i->bulan }}</td>
+                                                    <td>{{ $i->metode_pembayaran->metode_pembayaran }}</td>
+                                                    <td>Rp. {{ number_format($i->total_bayar, 0, ',', '.') }}
+                                                    </td>
 
-                                                        <td>
-                                                            <span
-                                                                class="badge rounded-2 fw-semibold fs-2
+                                                    <td>
+                                                        <span
+                                                            class="badge rounded-2 fw-semibold fs-2
                                                             @if ($i->status === 'validasi') badge-secondary
                                                             @elseif ($i->status === 'valid')
                                                                 badge-success
                                                             @elseif ($i->status === 'invalid')
                                                                 badge-danger @endif
                                                             ">
-                                                                {{ $i->status }}
-                                                            </span>
-                                                        </td>
+                                                            {{ $i->status }}
+                                                        </span>
+                                                    </td>
 
-                                                        <td style="text-align: center">
-                                                            <button class="btn btn-info btn-sm modal_show"
-                                                                data-toggle="modal" data-target="#modal_show"
-                                                                data-id="{{ $i->id }}"
-                                                                data-file="{{ $i->bukti_pembayaran }}">
-                                                                <i class="ti ti-receipt"></i>
-                                                            </button>
-                                                            {{-- <button class="btn btn-warning btn-sm modal_edit"
+                                                    <td style="text-align: center">
+                                                        <button class="btn btn-info btn-sm modal_show"
+                                                            data-toggle="modal" data-target="#modal_show"
+                                                            data-id="{{ $i->id }}"
+                                                            data-file="{{ $i->bukti_pembayaran }}">
+                                                            <i class="ti ti-receipt"></i>
+                                                        </button>
+                                                        {{-- <button class="btn btn-warning btn-sm modal_edit"
                                                                 data-toggle="modal" data-target="#modal_edit"
                                                                 data-id="{{ $i->id }}"
                                                                 data-rumah_id="{{ auth()->user()->rumah->id }}"
@@ -195,14 +195,14 @@
                                                             <a href="pembayaran/delete/{{ $i->id }}"
                                                                 class="btn btn-danger btn-sm">
                                                                 <i class="ti ti-trash"></i> --}}
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                @endif
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                {{-- @endif --}}
                                             @endforeach
                                         </tbody>
                                     </table>
-                                    @if ($pembayaran->where('rumah_id', auth()->user()->rumah->id)->isEmpty())
+                                    @if (count($pembayaran) == 0)
                                         <div colspan="6"
                                             style="display: flex; justify-content: center; align-items: center; min-height: 60vh;">
                                             <img src="{{ asset('storage/files/Add tasks-pana.svg') }}"
