@@ -124,17 +124,17 @@
 
                                         <tbody>
                                             @foreach ($permohonan_surat as $i)
-                                                @if ($i->users_id === auth()->user()->id)
-                                                    <tr>
-                                                        <td>{{ $i->created_at->format('d F Y') }}</td>
-                                                        <td>{{ $i->nomor_surat == null ? ' ' : $i->nomor_surat }}
-                                                        </td>
-                                                        <td>{{ $i->users->nik }}</td>
-                                                        <td>{{ $i->users->name }}</td>
-                                                        <td>{{ $i->jenis }}</td>
-                                                        <td>
-                                                            <span
-                                                                class="badge rounded-1 fw-semibold fs-2
+                                                {{-- @if ($i->users_id === auth()->user()->id) --}}
+                                                <tr>
+                                                    <td>{{ $i->created_at->format('d F Y') }}</td>
+                                                    <td>{{ $i->nomor_surat == null ? ' ' : $i->nomor_surat }}
+                                                    </td>
+                                                    <td>{{ $i->users->nik }}</td>
+                                                    <td>{{ $i->users->name }}</td>
+                                                    <td>{{ $i->jenis }}</td>
+                                                    <td>
+                                                        <span
+                                                            class="badge rounded-1 fw-semibold fs-2
                                                             @if ($i->status === 'pengajuan') badge-secondary
                                                             @elseif ($i->status === 'validasi')
                                                                 badge-info
@@ -145,12 +145,12 @@
                                                             @elseif ($i->status === 'batal')
                                                                 badge-danger @endif
                                                             ">
-                                                                {{ $i->status }}
-                                                            </span>
-                                                        </td>
+                                                            {{ $i->status }}
+                                                        </span>
+                                                    </td>
 
-                                                        <td style="text-align: center">
-                                                            {{-- <button class="btn btn-warning btn-sm modal_edit"
+                                                    <td style="text-align: center">
+                                                        {{-- <button class="btn btn-warning btn-sm modal_edit"
                                                                 data-toggle="modal" data-target="#modal_edit"
                                                                 data-id="{{ $i->id }}"
                                                                 data-users_id="{{ $i->users_id }}"
@@ -162,20 +162,20 @@
                                                                 class="btn btn-danger btn-sm">
                                                                 <i class="ti ti-trash"></i>
                                                             </a> --}}
-                                                            @if ($i->status === 'selesai')
-                                                                <a href="storage/{{ $i->file }}" target="_blank"
-                                                                    class="btn btn-info btn-sm">
-                                                                    <i class="ti ti-file-download text-white"></i>
-                                                                </a>
-                                                            @else
-                                                                <a href="#" target="_blank"
-                                                                    class="btn btn-info btn-sm disabled">
-                                                                    <i class="ti ti-file-download text-white"></i>
-                                                                </a>
-                                                            @endif
-                                                        </td>
-                                                    </tr>
-                                                @endif
+                                                        @if ($i->status === 'selesai')
+                                                            <a href="storage/{{ $i->file }}" target="_blank"
+                                                                class="btn btn-info btn-sm">
+                                                                <i class="ti ti-file-download text-white"></i>
+                                                            </a>
+                                                        @else
+                                                            <a href="#" target="_blank"
+                                                                class="btn btn-info btn-sm disabled">
+                                                                <i class="ti ti-file-download text-white"></i>
+                                                            </a>
+                                                        @endif
+                                                    </td>
+                                                </tr>
+                                                {{-- @endif --}}
                                             @endforeach
                                         </tbody>
                                     </table>
