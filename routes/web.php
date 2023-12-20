@@ -16,6 +16,7 @@ use App\Http\Controllers\PermohonanController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RumahController;
 use App\Http\Controllers\SuratController;
+use Illuminate\Support\Facades\File;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,12 @@ use App\Http\Controllers\SuratController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('test', function () {
+    File::link(
+        storage_path('app/public'), public_path('storage')
+    );
+});
 
 #Section Login/Logout
 Route::get('', [LandingController::class, 'index']);
