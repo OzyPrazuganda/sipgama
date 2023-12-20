@@ -90,6 +90,7 @@
                                     </i>
                                 @endif
                                 <div class="table-responsive">
+                                    @dump($permohonan_surat)
                                     <table class="table text-nowrap mb-0 mt-3 align-middle table-hover">
                                         <thead class="text-dark fs-4">
                                             @if ($permohonan_surat->where('users_id', auth()->user()->id)->isEmpty())
