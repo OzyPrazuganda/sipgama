@@ -75,7 +75,7 @@
                             <div class="card-body p-4">
                                 <h5 class="card-title fw-semibold" style="margin: 0;">Daftar surat yang anda ajukan.
                                 </h5>
-                                @if ($permohonan_surat->where('users_id', auth()->user()->id)->isEmpty())
+                                @if (count($permohonan_surat) == 0)
                                     {{-- empty header --}}
                                 @else
                                     <i
@@ -90,10 +90,9 @@
                                     </i>
                                 @endif
                                 <div class="table-responsive">
-                                    @dump($permohonan_surat)
                                     <table class="table text-nowrap mb-0 mt-3 align-middle table-hover">
                                         <thead class="text-dark fs-4">
-                                            @if ($permohonan_surat->where('users_id', auth()->user()->id)->isEmpty())
+                                            @if (count($permohonan_surat) == 0)
                                                 {{-- empty header --}}
                                             @else
                                                 <tr>
@@ -179,7 +178,7 @@
                                             @endforeach
                                         </tbody>
                                     </table>
-                                    @if ($permohonan_surat->where('users_id', auth()->user()->id)->isEmpty())
+                                    @if (count($permohonan_surat) == 0)
                                         <div colspan="6" style="text-align: center">
                                             <img src="{{ asset('storage/files/Add tasks-pana.svg') }}"
                                                 alt="Empty Table Image" width="300">

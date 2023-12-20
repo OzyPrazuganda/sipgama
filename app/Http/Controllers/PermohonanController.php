@@ -14,8 +14,7 @@ class PermohonanController extends Controller
     {
         return view('permohonan_surat.permohonan_index', [
             'title' => 'Permohonan Surat',
-            'permohonan_surat' => Permohonan::all(),
-            'users' => User::all()
+            'permohonan_surat' => Permohonan::where('users_id', auth()->user()->id)->get(),
         ]);
     }
 
