@@ -118,7 +118,8 @@
                                 <h5 class="card-title fw-semibold mb-4">Riwayat Pembayaran.
                                 </h5>
                                 <div>
-                                    <table class="table text-nowrap mb-0 align-middle fs-3 table-hover">
+                                    <table
+                                        class="table text-nowrap mb-0 align-middle fs-3 table-hover table-responsive">
                                         <thead class="text-dark">
                                             @if ($pembayaran->where('rumah_id', auth()->user()->rumah->id)->isEmpty())
                                                 {{-- empty header --}}
@@ -157,7 +158,7 @@
                                                         <td>{{ $i->rumah->nomor_rumah }}</td>
                                                         <td>{{ $i->bulan }}</td>
                                                         <td>{{ $i->metode_pembayaran->metode_pembayaran }}</td>
-                                                        <td>Rp. {{ number_format($i->total_bayar, 0, ',', '.') }},00
+                                                        <td>Rp. {{ number_format($i->total_bayar, 0, ',', '.') }}
                                                         </td>
 
                                                         <td>
