@@ -17,12 +17,22 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $nik = $this->faker->NIK();
+
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'remember_token' => Str::random(10),
+            'no_kk' => (string) $this->faker->randomNumber(9, true),
+            'nik' => $nik,
+            'name' => $this->faker->name,
+            'role' => $this->faker->randomElement(['warga']),
+            'no_telp' => $this->faker->phoneNumber(),
+            'tempat_lahir' => $this->faker->sentence(2),
+            'tanggal_lahir' => $this->faker->date(),
+            'jenis_kelamin' => $this->faker->randomElement(['L', 'P']),
+            'agama' => $this->faker->randomElement(['islam', 'kristen', 'buddha', 'hindu', 'konghuchu']),
+            'pendidikan_terakhir' => $this->faker->randomElement(['SD', 'SMP', 'SMA', 'S1', 'S2', 'S3']),
+            'pekerjaan' => $this->faker->randomElement(['karyawan_swasta', 'petani', 'wiraswasta', 'pns', 'guru/dosen', 'pengemudi', 'tenaga_medis', 'nelayan', 'lainnya']),
+            'password' => $nik,
+            'rumah_id' => mt_rand(1, 170)
         ];
     }
 
@@ -31,7 +41,7 @@ class UserFactory extends Factory
      */
     public function unverified(): static
     {
-        return $this->state(fn (array $attributes) => [
+        return $this->state(fn(array $attributes) => [
             'email_verified_at' => null,
         ]);
     }

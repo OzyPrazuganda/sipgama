@@ -42,43 +42,43 @@
     <!-- END nav -->
 
     <div class="hero-wrap ftco-degree-bg"
-        style="background-image: url('{{ asset('uptown-master') }}/images/bg_1.jpg');"
+        style="background-image: url('{{ asset('storage/files/Perumahan Villa Gading Copy.png') }}');"
         data-stellar-background-ratio="0.5">
         <div class="container">
 
             <div class="row slider-text justify-content-center align-items-center">
-                <div style="margin-top: -50px">
+                <div style="margin-top: -150px">
                     <section class="ftco-counter img" id="section-counter">
                         <div class="row">
-                            <div class="col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
                                 <div class="text d-flex align-items-center">
-                                    <strong class="number" data-number="305">0</strong>
-                                    <span>Area <br>Population</span>
+                                    <strong class="number" data-number="<?php echo $warga; ?>">0</strong>
+                                    <span>Total <br>Populasi</span>
                                 </div>
                             </div>
-                            <div class="col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
                                 <div class="text d-flex align-items-center">
-                                    <strong class="number" data-number="1090">0</strong>
-                                    <span>Total <br>Properties</span>
+                                    <strong class="number" data-number="<?php echo $rumah; ?>">0</strong>
+                                    <span>Total <br>Rumah</span>
                                 </div>
                             </div>
-                            <div class="col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+                            <div class="col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
                                 <div class="text d-flex align-items-center">
-                                    <strong class="number" data-number="209">0</strong>
-                                    <span>Average <br>House</span>
+                                    <strong class="number" data-number="<?php echo $huni; ?>">0</strong>
+                                    <span>Rumah <br>Dihuni</span>
                                 </div>
                             </div>
-                            <div class="col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+                            {{-- <div class="col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
                                 <div class="text d-flex align-items-center">
                                     <strong class="number" data-number="67">0</strong>
                                     <span>Total <br>Branches</span>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </section>
                 </div>
 
-                <div style="margin-top:-400px">
+                <div style="margin-top:-700px">
                     <div class="text text-center ftco-animate">
                         <h1>Sistem Informasi Pengelolaan <br>Perumahan Villa Gading Mayang</h1>
                     </div>
@@ -91,7 +91,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12 heading-section text-center ftco-animate mb-5">
-                    <span class="subheading">Service</span>
+                    <span class="subheading">Servis</span>
                     <h2 class="mb-2">Fitur utama dalam mengelola perumahan</h2>
                 </div>
             </div>
@@ -148,7 +148,7 @@
         <div class="container">
             <div class="row justify-content-center pb-5">
                 <div class="col-md-12 heading-section text-center ftco-animate">
-                    <span class="subheading">Facility</span>
+                    <span class="subheading">Fasilitas</span>
                     <h2 class="mb-4">Fasilitas di Villa Gading Mayang</h2>
                 </div>
             </div>
@@ -156,27 +156,12 @@
                 <div class="col-md-3 ftco-animate">
                     <div class="agent">
                         <div class="img">
-                            <img src="{{ asset('uptown-master') }}/images/team-1.jpg" class="img-fluid"
+                            <img src="{{ asset('storage/files/Pos Villa Gading.png') }}" class="img-fluid"
                                 alt="Colorlib Template">
                         </div>
                         <div class="desc">
-                            <h3>James Stallon</h3>
-                            <p class="h-info"><span class="location">Listing</span> <span class="details">&mdash;
-                                    10
-                                    Properties</span></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 ftco-animate">
-                    <div class="agent">
-                        <div class="img">
-                            <img src="{{ asset('uptown-master') }}/images/team-2.jpg" class="img-fluid"
-                                alt="Colorlib Template">
-                        </div>
-                        <div class="desc">
-                            <h3>James Stallon</h3>
-                            <p class="h-info"><span class="location">Listing</span>
-                                <span class="details">&mdash; 10 Properties</span>
+                            <h3>Pos Penjagaan</h3>
+                            <p class="h-info"><span class="location">Keamanan</span>
                             </p>
                         </div>
                     </div>
@@ -184,28 +169,39 @@
                 <div class="col-md-3 ftco-animate">
                     <div class="agent">
                         <div class="img">
-                            <img src="{{ asset('uptown-master') }}/images/team-3.jpg" class="img-fluid"
+                            <img src="{{ asset('storage/files/Perumahan Villa Gading.png') }}" class="img-fluid"
                                 alt="Colorlib Template">
                         </div>
                         <div class="desc">
-                            <h3>James Stallon</h3>
-                            <p class="h-info"><span class="location">Listing</span> <span class="details">&mdash;
-                                    10
-                                    Properties</span></p>
+                            <h3>Perumahan</h3>
+                            <p class="h-info"><span class="location">Model Perumahan</span>
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 ftco-animate">
                     <div class="agent">
                         <div class="img">
-                            <img src="{{ asset('uptown-master') }}/images/team-4.jpg" class="img-fluid"
+                            <img src="{{ asset('storage/files/Masjid Villa Gading 2.png') }}" class="img-fluid"
                                 alt="Colorlib Template">
                         </div>
                         <div class="desc">
-                            <h3>James Stallon</h3>
-                            <p class="h-info"><span class="position">Listing</span> <span class="details">&mdash;
-                                    10
-                                    Properties</span></p>
+                            <h3>Masjid</h3>
+                            <p class="h-info"><span class="location">Tempat Ibadah</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 ftco-animate">
+                    <div class="agent">
+                        <div class="img">
+                            <img src="{{ asset('storage/files/Jalanan Villa Gading.png') }}" class="img-fluid"
+                                alt="Colorlib Template">
+                        </div>
+                        <div class="desc">
+                            <h3>Jalan Umum</h3>
+                            <p class="h-info"><span class="location">Jalanan</span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -217,7 +213,7 @@
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center"
-                    style="background-image: url({{ asset('uptown-master') }}/images/about.jpg);">
+                    style="background-image: url({{ asset('storage/files/About.jpeg') }});">
                 </div>
                 <div class="col-md-6 wrap-about py-md-5 ftco-animate">
                     <div class="heading-section p-md-5">
@@ -241,10 +237,10 @@
     <footer class="ftco-footer ftco-section">
         <div class="container">
 
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-md-12 text-center">
-
-                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         Copyright &copy;
                         <script>
                             document.write(new Date().getFullYear());
@@ -254,10 +250,9 @@
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </p>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </footer>
-
 
 
     <!-- loader -->
@@ -266,7 +261,8 @@
                 stroke="#eeeeee" />
             <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4"
                 stroke-miterlimit="10" stroke="#F96D00" />
-        </svg></div>
+        </svg>
+    </div>
 
 
     <script src="{{ asset('uptown-master') }}/js/jquery.min.js"></script>

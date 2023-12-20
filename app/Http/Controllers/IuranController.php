@@ -16,7 +16,8 @@ class IuranController extends Controller
     {
         return view('daftar_iuran.index', [
             'title' => 'Daftar Iuran',
-            'pembayaran' => Pembayaran::all(['*']),
+            // 'pembayaran' => Pembayaran::all(['*']),
+            'pembayaran' => Pembayaran::latest()->get(),
             'rumah' => Rumah::all(['*']),
             'metode_pembayaran' => MetodePembayaran::all(['*']),
         ]);

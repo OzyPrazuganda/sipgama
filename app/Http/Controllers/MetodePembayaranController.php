@@ -22,7 +22,7 @@ class MetodePembayaranController extends Controller
         $validatedData = $request->validate([
             'nomor_pembayaran' => 'required',
             'nama' => 'required',
-            'metode_pembayaran' => 'required|in:transfer_bank,gopay,dana,shopeepay,ditempat'
+            'metode_pembayaran' => 'required|in:bri,bca,mandiri,dana,gopay,shopeepay,ovo,qris,ditempat'
         ]);
 
         if (MetodePembayaran::create($validatedData)) {
@@ -37,7 +37,7 @@ class MetodePembayaranController extends Controller
     public function update(Request $request)
     {
         $validatedData = $request->validate([
-            'nomor_pembayaran' => 'required|unique:metode_pembayaran,nomor_pembayaran,' . $request->id,
+            'nomor_pembayaran' => 'required',
             'nama' => 'required',
             'metode_pembayaran' => 'required'
         ]);

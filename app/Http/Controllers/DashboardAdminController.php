@@ -29,8 +29,8 @@ class DashboardAdminController extends Controller
         $totalPengeluaran = Pengeluaran::sum('jumlah');
         $users = User::count(['*']);
         $totalrumah = Rumah::count(['*']);
-        $rumahvalid = Rumah::where('status', 'valid')->count();
-        $rumahinvalid = Rumah::where('status', 'invalid')->count();
+        $rumahvalid = Rumah::where('status', 'huni')->count();
+        $rumahinvalid = Rumah::where('status', 'kosong')->count();
         $permohonan = Permohonan::where('status', 'pengajuan')->count();
 
         return view('dashboard.dashboard_admin', [

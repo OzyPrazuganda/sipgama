@@ -117,7 +117,7 @@
                     <div class="col">
                         <div class="col-lg-12">
                             <div class="card rounded-4">
-                                <div class="card-body">
+                                <div class="card-body mb-3">
                                     <h6 class="card-subtitle mb-3 text-muted">Pemasukan</h6>
 
                                     <div class="row">
@@ -134,19 +134,19 @@
                                         </div>
                                     </div>
 
-                                    <div class="mb-0">
+                                    {{-- <div class="mb-0">
                                         <span class="text-danger">
                                             <i class="ti ti-arrow-down-right fs-3">-3.65%</i>
                                         </span>
                                         <span class="text-muted fs-3">Since last week</span>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-lg-12">
                             <div class="card rounded-4">
-                                <div class="card-body">
+                                <div class="card-body mb-3">
                                     <h6 class="card-subtitle mb-3 text-muted">Pengeluaran</h6>
 
                                     <div class="row">
@@ -163,12 +163,12 @@
                                         </div>
                                     </div>
 
-                                    <div class="mb-0">
+                                    {{-- <div class="mb-0">
                                         <span class="text-danger">
                                             <i class="ti ti-arrow-down-right fs-3">-3.65%</i>
                                         </span>
                                         <span class="text-muted fs-3">Since last week</span>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>

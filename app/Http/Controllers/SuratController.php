@@ -15,7 +15,8 @@ class SuratController extends Controller
     {
         return view('surat.index', [
             'title' => 'Permohonan Surat',
-            'permohonan_surat' => Permohonan::all(),
+            // 'permohonan_surat' => Permohonan::all(),
+            'permohonan_surat' => Permohonan::latest()->get(),
             'users' => User::all()
         ]);
     }
