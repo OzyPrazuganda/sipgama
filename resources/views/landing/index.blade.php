@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="{{ asset('uptown-master') }}/css/flaticon.css">
     <link rel="stylesheet" href="{{ asset('uptown-master') }}/css/icomoon.css">
     <link rel="stylesheet" href="{{ asset('uptown-master') }}/css/style.css">
+
+    {{-- footer --}}
+    <link rel="stylesheet" href="{{ asset('bootstrap-footer-05') }}/css/style.css">
 </head>
 
 <body>
