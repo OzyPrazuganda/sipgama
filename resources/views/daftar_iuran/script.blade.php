@@ -1,4 +1,10 @@
+<script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.js"></script>
+
 <script>
+    $(document).ready(function() {
+        $('#tabel').DataTable();
+    });
+
     // For Edit
     $('.modal_edit').on('click', function(event) {
         var id = $(this).attr('data-id')

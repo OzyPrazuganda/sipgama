@@ -112,7 +112,7 @@
 
                     {{-- Tampilan Halaman (Tabels) --}}
 
-                    <div class="col-lg-8 d-flex align-items-stretch">
+                    <div id="tabel" class="col-lg-8 d-flex align-items-stretch">
                         <div class="card w-100 rounded-3">
                             <div class="card-body p-4">
                                 <h5 class="card-title fw-semibold mb-4">Riwayat Pembayaran.

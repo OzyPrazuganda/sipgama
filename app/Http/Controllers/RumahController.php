@@ -25,6 +25,7 @@ class RumahController extends Controller
 
         $validatedData = $request->validate([
             'nomor_rumah' => 'required',
+            'blok' => 'required',
             'status' => 'required|in:valid,invalid',
             'tipe_rumah_id' => 'required'
         ]);
@@ -43,6 +44,7 @@ class RumahController extends Controller
         // dd($request);
         $validatedData = $request->validate([
             'nomor_rumah' => 'required|unique:rumah,nomor_rumah,' . $request->id,
+            'blok' => 'required',
             'status' => 'required',
             'tipe_rumah_id' => 'required',
         ]);

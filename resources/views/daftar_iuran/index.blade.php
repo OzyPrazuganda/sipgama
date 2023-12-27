@@ -51,7 +51,7 @@
                                 </div>
 
                                 <div class="table-responsive">
-                                    <table class="table text-nowrap mb-0 align-middle fs-3 table-hover">
+                                    <table id="tabel" class="table text-nowrap mb-0 align-middle fs-3 table-hover">
                                         <thead class="text-dark">
                                             @if ($pembayaran->isEmpty())
                                                 {{-- empty header --}}

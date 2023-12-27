@@ -24,6 +24,33 @@
                         @enderror
                     </div>
 
+                    <div class="mb-2">
+                        <label for="blok_edit" class="form-label" style="font-size: 11pt">Blok</label>
+                        <div>
+                            <select
+                                class="form-control @error('blok_edit') is-invalid @enderror rounded-2 form-control-sm"
+                                name="blok_edit" id="blok_edit">
+                                <option value="" selected disabled hidden>Pilih Blok
+                                </option>
+                                <option value="blok a">Blok A</option>
+                                <option value="blok b">Blok B</option>
+                                <option value="blok c">Blok C</option>
+                                <option value="blok d">Blok D</option>
+                                <option value="blok e">Blok E</option>
+                                <option value="blok f">Blok F</option>
+                                <option value="blok g">Blok G</option>
+                                <option value="blok h">Blok H</option>
+                                <option value="blok i">Blok I</option>
+                                <option value="blok j">Blok J</option>
+                            </select>
+                        </div>
+                        @error('blok_edit')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
                     <div class="ml-2 mb-2">
                         <label for="status" class="form-label" style="font-size: 11pt">Status</label>
                         <div class="form-check">

@@ -61,6 +61,34 @@
                                                     @enderror
                                                 </div>
 
+                                                <div class="mb-2">
+                                                    <label for="blok" class="form-label"
+                                                        style="font-size: 11pt">Blok</label>
+                                                    <div>
+                                                        <select
+                                                            class="form-control @error('blok') is-invalid @enderror rounded-2 form-control-sm"
+                                                            name="blok" id="blok">
+                                                            <option value="" selected disabled hidden>Pilih Blok
+                                                            </option>
+                                                            <option value="blok a">Blok A</option>
+                                                            <option value="blok b">Blok B</option>
+                                                            <option value="blok c">Blok C</option>
+                                                            <option value="blok d">Blok D</option>
+                                                            <option value="blok e">Blok E</option>
+                                                            <option value="blok f">Blok F</option>
+                                                            <option value="blok g">Blok G</option>
+                                                            <option value="blok h">Blok H</option>
+                                                            <option value="blok i">Blok I</option>
+                                                            <option value="blok j">Blok J</option>
+                                                        </select>
+                                                    </div>
+                                                    @error('blok')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
+                                                </div>
+
                                                 <label for="status" class="form-label" style="font-size: 11pt">
                                                     Status</label>
                                                 <div class="ml-2 mb-2">
@@ -113,6 +141,9 @@
                                             <h6 class="fw-semibold mb-0">Nomor Rumah</h6>
                                         </th>
                                         <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Blok</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
                                             <h6 class="fw-semibold mb-0">Status</h6>
                                         </th>
                                         <th class="border-bottom-0">
@@ -129,6 +160,7 @@
                                     @foreach ($rumah as $i)
                                         <tr>
                                             <th scope="row">{{ $i->nomor_rumah }}</th>
+                                            <th>{{ $i->blok }}</th>
                                             <td>{{ $i->status }}</td>
                                             <td>{{ $i->tipe_rumah->nomor_tipe }}</td>
                                             @can('admin')
@@ -136,6 +168,7 @@
                                                     <button class="btn btn-warning btn-sm modal_edit" data-toggle="modal"
                                                         data-target="#modal_edit" data-id="{{ $i->id }}"
                                                         data-nomor_rumah="{{ $i->nomor_rumah }}"
+                                                        data-blok="{{ $i->blok }}"
                                                         data-status="{{ $i->status }}"
                                                         data-ukuran_rumah="{{ $i->ukuran_rumah }}"
                                                         data-tipe_rumah="{{ $i->tipe_rumah->id }}">
@@ -175,10 +208,12 @@
         $('.modal_edit').on('click', function(event) {
             var id = $(this).attr('data-id')
             var nomor_rumah = $(this).attr('data-nomor_rumah')
+            var blok = $(this).attr('data-blok')
             var status = $(this).attr('data-status')
             var tipe_rumah_id = $(this).attr('data-tipe_rumah')
 
             $('#nomor_rumah_edit').val(nomor_rumah);
+            $('#blok_edit').val(blok);
             if (status === 'valid') {
                 $('#status_edit_valid').prop('checked', true);
             } else if (status === 'invalid') {

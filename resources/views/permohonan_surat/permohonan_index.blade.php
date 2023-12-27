@@ -90,7 +90,7 @@
                                     </i>
                                 @endif
                                 <div class="table-responsive">
-                                    <table class="table text-nowrap mb-0 mt-3 align-middle table-hover">
+                                    <table id="tabel" class="table text-nowrap mb-0 mt-3 align-middle table-hover">
                                         <thead class="text-dark fs-4">
                                             @if (count($permohonan_surat) == 0)
                                                 {{-- empty header --}}
@@ -197,7 +197,13 @@
 
     @include('permohonan_surat.permohonan_edit')
 
+    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.js"></script>
+
     <script>
+        $(document).ready(function() {
+            $('#tabel').DataTable();
+        });
+
         $('.modal_edit').on('click', function(event) {
             var id = $(this).attr('data-id')
             var users_id = $(this).attr('data-users_id')
