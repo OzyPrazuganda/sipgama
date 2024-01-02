@@ -37,9 +37,17 @@
                                             <option value="" selected disabled hidden>Pilih Jumlah Bulan
                                             </option>
                                             <option value="1">1 Bulan</option>
+                                            <option value="2">2 Bulan</option>
                                             <option value="3">3 Bulan</option>
+                                            <option value="4">4 Bulan</option>
+                                            <option value="5">5 Bulan</option>
                                             <option value="6">6 Bulan</option>
+                                            <option value="7">7 Bulan</option>
+                                            <option value="8">8 Bulan</option>
                                             <option value="9">9 Bulan</option>
+                                            <option value="10">10 Bulan</option>
+                                            <option value="11">11 Bulan</option>
+                                            <option value="12">12 Bulan</option>
                                         </select>
                                         <div class="form-text" style="font-size: 12px">Pilih jumlah bulan yang akan
                                             dibayarkan.
@@ -102,6 +110,9 @@
 
                                     <input type="hidden" id="status" name="status" value="validasi">
 
+                                    <input type="hidden" id="warga_id" name="warga_id"
+                                        value="{{ auth()->user()->id }}">
+
                                     {{-- end hidden --}}
 
                                     <button type="submit" class="btn btn-primary btn-sm rounded-2">Submit</button>
@@ -112,13 +123,13 @@
 
                     {{-- Tampilan Halaman (Tabels) --}}
 
-                    <div id="tabel" class="col-lg-8 d-flex align-items-stretch">
+                    <div class="col-lg-8 d-flex align-items-stretch">
                         <div class="card w-100 rounded-3">
                             <div class="card-body p-4">
                                 <h5 class="card-title fw-semibold mb-4">Riwayat Pembayaran.
                                 </h5>
                                 <div>
-                                    <table
+                                    <table id="tabel"
                                         class="table text-nowrap mb-0 align-middle fs-3 table-hover table-responsive">
                                         <thead class="text-dark">
                                             @if (count($pembayaran) == 0)
@@ -133,6 +144,9 @@
                                                     </th>
                                                     <th class="border-bottom-0">
                                                         <h6 class="fw-semibold mb-0">Bulan</h6>
+                                                    </th>
+                                                    <th class="border-bottom-0">
+                                                        <h6 class="fw-semibold mb-0">Bayar Berikutnya</h6>
                                                     </th>
                                                     <th class="border-bottom-0">
                                                         <h6 class="fw-semibold mb-0">Metode</h6>
@@ -157,6 +171,9 @@
                                                     <td>{{ $i->created_at->format('d F Y') }}</td>
                                                     <td>{{ $i->rumah->nomor_rumah }}</td>
                                                     <td>{{ $i->bulan }}</td>
+                                                    <td>
+                                                        {{ $i->bulan_berikut != null ? (is_string($i->bulan_berikut) ? \Carbon\Carbon::parse($i->bulan_berikut)->format('d F Y') : $i->bulan_berikut->format('d F Y')) : '-' }}
+                                                    </td>
                                                     <td>{{ $i->metode_pembayaran->metode_pembayaran }}</td>
                                                     <td>Rp. {{ number_format($i->total_bayar, 0, ',', '.') }}
                                                     </td>
@@ -213,12 +230,13 @@
                             </div>
                         </div>
                     </div>
-
-                    {{-- Table end --}}
                 </div>
+
+                {{-- Table end --}}
             </div>
         </div>
     </div>
+
 
     @include('pembayaran.edit')
 

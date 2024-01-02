@@ -12,6 +12,7 @@ class Rumah extends Model
 
     protected $fillable = [
         'nomor_rumah',
+        'blok',
         'status',
         'tipe_rumah_id'
     ];

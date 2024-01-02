@@ -43,6 +43,11 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    public function pembayaran()
+    {
+        return $this->hasMany(Pembayaran::class);
+    }
+
     public function rumah()
     {
         return $this->belongsTo(Rumah::class);

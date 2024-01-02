@@ -70,16 +70,16 @@
                                                             name="blok" id="blok">
                                                             <option value="" selected disabled hidden>Pilih Blok
                                                             </option>
-                                                            <option value="blok a">Blok A</option>
-                                                            <option value="blok b">Blok B</option>
-                                                            <option value="blok c">Blok C</option>
-                                                            <option value="blok d">Blok D</option>
-                                                            <option value="blok e">Blok E</option>
-                                                            <option value="blok f">Blok F</option>
-                                                            <option value="blok g">Blok G</option>
-                                                            <option value="blok h">Blok H</option>
-                                                            <option value="blok i">Blok I</option>
-                                                            <option value="blok j">Blok J</option>
+                                                            <option value="a">Blok A</option>
+                                                            <option value="b">Blok B</option>
+                                                            <option value="c">Blok C</option>
+                                                            <option value="d">Blok D</option>
+                                                            <option value="e">Blok E</option>
+                                                            <option value="f">Blok F</option>
+                                                            <option value="g">Blok G</option>
+                                                            <option value="h">Blok H</option>
+                                                            <option value="i">Blok I</option>
+                                                            <option value="j">Blok J</option>
                                                         </select>
                                                     </div>
                                                     @error('blok')
@@ -214,9 +214,9 @@
 
             $('#nomor_rumah_edit').val(nomor_rumah);
             $('#blok_edit').val(blok);
-            if (status === 'valid') {
+            if (status === 'huni') {
                 $('#status_edit_valid').prop('checked', true);
-            } else if (status === 'invalid') {
+            } else if (status === 'kosong') {
                 $('#status_edit_invalid').prop('checked', true);
             }
             $('#tipe_rumah_edit').val(tipe_rumah_id);

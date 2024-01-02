@@ -25,7 +25,7 @@ class UserFactory extends Factory
             'name' => $this->faker->name,
             'role' => $this->faker->randomElement(['warga']),
             'no_telp' => $this->faker->phoneNumber(),
-            'tempat_lahir' => $this->faker->sentence(2),
+            'tempat_lahir' => $this->faker->sentence(1),
             'tanggal_lahir' => $this->faker->date(),
             'jenis_kelamin' => $this->faker->randomElement(['L', 'P']),
             'agama' => $this->faker->randomElement(['islam', 'kristen', 'buddha', 'hindu', 'konghuchu']),

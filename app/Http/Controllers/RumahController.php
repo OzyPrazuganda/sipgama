@@ -21,7 +21,6 @@ class RumahController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request);
 
         $validatedData = $request->validate([
             'nomor_rumah' => 'required',
@@ -48,6 +47,8 @@ class RumahController extends Controller
             'status' => 'required',
             'tipe_rumah_id' => 'required',
         ]);
+
+        // dd($validatedData);
 
         if (Rumah::where('id', $request->id)->update($validatedData)) {
             Alert::success('Data Updated!');

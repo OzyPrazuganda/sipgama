@@ -14,6 +14,17 @@
                     @csrf
 
                     <div class="mb-3">
+                        <label for="warga_id">Warga</label>
+                        <div>
+                            <select class="form-control form-control-sm rounded-2" name="warga_id" id="warga_id">
+                                @foreach ($warga->sortBy('name') as $i)
+                                    <option value="{{ $i->id }}">{{ $i->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
                         <label for="rumah_id">Nomor Rumah</label>
                         <div>
                             <select class="form-control form-control-sm rounded-2" name="rumah_id" id="rumah_id">
@@ -31,9 +42,17 @@
                             <option value="" disabled hidden>Pilih Jumlah Bulan
                             </option>
                             <option value="1">1 Bulan</option>
+                            <option value="2">2 Bulan</option>
                             <option value="3">3 Bulan</option>
+                            <option value="4">4 Bulan</option>
+                            <option value="5">5 Bulan</option>
                             <option value="6">6 Bulan</option>
+                            <option value="7">7 Bulan</option>
+                            <option value="8">8 Bulan</option>
                             <option value="9">9 Bulan</option>
+                            <option value="10">10 Bulan</option>
+                            <option value="11">11 Bulan</option>
+                            <option value="12">12 Bulan</option>
                         </select>
                         <div class="form-text" style="font-size: 12px">Pilih jumlah bulan yang akan
                             dibayarkan.
@@ -132,9 +151,17 @@
                             <option value="" disabled hidden>Pilih Jumlah Bulan
                             </option>
                             <option value="1">1 Bulan</option>
+                            <option value="2">2 Bulan</option>
                             <option value="3">3 Bulan</option>
+                            <option value="4">4 Bulan</option>
+                            <option value="5">5 Bulan</option>
                             <option value="6">6 Bulan</option>
+                            <option value="7">7 Bulan</option>
+                            <option value="8">8 Bulan</option>
                             <option value="9">9 Bulan</option>
+                            <option value="10">10 Bulan</option>
+                            <option value="11">11 Bulan</option>
+                            <option value="12">12 Bulan</option>
                         </select>
                         <div class="form-text" style="font-size: 12px">Pilih jumlah bulan yang akan
                             dibayarkan.
@@ -166,6 +193,8 @@
                     </div>
 
                     <input type="hidden" class="form-control" id="rumah_id_edit" name="rumah_id">
+
+                    <input type="hidden" class="form_control" id="warga_id_edit" name="warga_id">
 
                     {{-- end hidden --}}
 

@@ -9,6 +9,7 @@
     $('.modal_edit').on('click', function(event) {
         var id = $(this).attr('data-id')
         var rumah_id = $(this).attr('data-rumah_id')
+        var warga_id = $(this).attr('data-warga_id')
         var status = $(this).attr('data-status')
         var metode_pembayaran = $(this).attr('data-metode_pembayaran')
         var total = $(this).attr('data-total')
@@ -16,6 +17,7 @@
         var bukti_pembayaran = $(this).attr('data-bukti_bayar')
 
         $('#rumah_id_edit').val(rumah_id);
+        $('#warga_id_edit').val(warga_id);
         $('#bulan_edit').val(bulan);
         $('#total_bayar_edit').val(total);
         $('#metode_pembayaran_id_edit').val(metode_pembayaran);

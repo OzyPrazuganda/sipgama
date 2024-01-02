@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Rumah;
 use App\Models\Pembayaran;
 use Illuminate\Http\Request;
 use App\Models\MetodePembayaran;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -19,6 +19,7 @@ class IuranController extends Controller
             // 'pembayaran' => Pembayaran::all(['*']),
             'pembayaran' => Pembayaran::latest()->get(),
             'rumah' => Rumah::all(['*']),
+            'warga' => User::all(),
             'metode_pembayaran' => MetodePembayaran::all(['*']),
         ]);
     }
@@ -27,7 +28,7 @@ class IuranController extends Controller
     {
         $validatedData = $request->validate([
             'rumah_id' => 'required',
-            'bulan' => 'required|in:1,3,6,9',
+            'bulan' => 'required|in:1,2,3,4,5,6,7,8,9,10,11,12',
             'metode_pembayaran_id' => 'required',
             'bukti_pembayaran' => 'nullable|image|file|max:1024',
             'total_bayar' => 'required',
@@ -51,14 +52,26 @@ class IuranController extends Controller
 
     public function update(Request $request)
     {
+        // dd($request->request);
         $validatedData = $request->validate([
-            'rumah_id' => 'required',
-            'bulan' => 'required|in:1,3,6,9',
+            // 'rumah_id' => 'required',
+            // 'warga_id' => 'required',
+            'bulan' => 'required|in:1,2,3,4,5,6,7,8,9,10,11,12',
             'metode_pembayaran_id' => 'required',
             'bukti_pembayaran' => 'nullable|image|file|max:1024',
             'total_bayar' => 'required',
             'status' => 'required|in:validasi,valid,invalid'
         ]);
+
+        $bayar_berikut = null;
+
+        if ($request->status) {
+            $pembayaran = Pembayaran::where('id', $request->id)->first();
+            $created_at = $pembayaran->created_at;
+            $bayar_berikut = date('Y-m-d', strtotime("+" . $request->bulan . " months", strtotime($created_at)));
+        }
+
+        $validatedData['bulan_berikut'] = $bayar_berikut;
 
         if ($request->file('bukti_pembayaran')) {
             if ($request->oldfile) {

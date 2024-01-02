@@ -18,7 +18,7 @@ class RumahFactory extends Factory
     {
         return [
             'nomor_rumah' => $this->faker->randomNumber(3, false),
-            'blok' => $this->faker->randomElement(['blok a', 'blok b', 'blok c', 'blok d', 'blok e', 'blok f', 'blog g', 'blok h', 'blok i', 'blok j']),
+            'blok' => $this->faker->randomElement(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']),
             'status' => $this->faker->randomElement(['kosong', 'huni']),
             'tipe_rumah_id' => mt_rand(1, 5),
         ];

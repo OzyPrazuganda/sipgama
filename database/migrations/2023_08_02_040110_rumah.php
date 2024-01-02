@@ -11,14 +11,16 @@ return new class extends Migration {
     public function up(): void
     {
         schema::create('rumah', function (Blueprint $table) {
-            $table->id();
-            $table->integer('nomor_rumah');
-            $table->enum('blok', ['blok a', 'blok b', 'blok c', 'blok d', 'blok e', 'blok f', 'blog g', 'blok h', 'blok i', 'blok j']);
+            $table->increments('id');
+            $table->string('nomor_rumah', 3);
+            $table->string('blok', 2);
+            // $table->enum('blok', ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']);
             $table->enum('status', ['huni', 'kosong']);
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
 
-            $table->foreignId('tipe_rumah_id')->references('id')->on('tipe_rumah');
+            $table->unsignedInteger('tipe_rumah_id');
+            $table->foreign('tipe_rumah_id')->references('id')->on('tipe_rumah');
         });
     }
 

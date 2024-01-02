@@ -64,7 +64,13 @@
                                                         <h6 class="fw-semibold mb-0">No. Rumah</h6>
                                                     </th>
                                                     <th class="border-bottom-0">
+                                                        <h6 class="fw-semibold mb-0">Nama</h6>
+                                                    </th>
+                                                    <th class="border-bottom-0">
                                                         <h6 class="fw-semibold mb-0">Bulan</h6>
+                                                    </th>
+                                                    <th class="border-bottom-0">
+                                                        <h6 class="fw-semibold mb-0">Bulan Berikutnya</h6>
                                                     </th>
                                                     <th class="border-bottom-0">
                                                         <h6 class="fw-semibold mb-0">Metode</h6>
@@ -89,7 +95,11 @@
                                                 <tr>
                                                     <td>{{ $i->created_at->format('d F Y') }}</td>
                                                     <td>{{ $i->rumah->nomor_rumah }}</td>
+                                                    <td>{{ $i->warga->name }}</td>
                                                     <td>{{ $i->bulan }}</td>
+                                                    <td>
+                                                        {{ $i->bulan_berikut != null ? (is_string($i->bulan_berikut) ? \Carbon\Carbon::parse($i->bulan_berikut)->format('d F Y') : $i->bulan_berikut->format('d F Y')) : '-' }}
+                                                    </td>
                                                     <td>{{ $i->metode_pembayaran->metode_pembayaran }}</td>
                                                     <td>Rp. {{ number_format($i->total_bayar, 0, ',', '.') }},00
                                                     </td>
@@ -103,7 +113,9 @@
                                                                         @csrf
                                                                         <input type="hidden" name="status" value="valid">
                                                                         <input type="hidden" name="rumah_id"
-                                                                            value="{{ auth()->user()->rumah->id }}">
+                                                                            value="{{ $i->rumah_id }}">
+                                                                        <input type="hidden" name="warga_id"
+                                                                            value="{{ $i->warga_id }}">
                                                                         <input type="hidden" name="bulan"
                                                                             value="{{ $i->bulan }}">
                                                                         <input type="hidden" name="metode_pembayaran_id"
@@ -121,7 +133,9 @@
                                                                         <input type="hidden" name="status"
                                                                             value="invalid">
                                                                         <input type="hidden" name="rumah_id"
-                                                                            value="{{ auth()->user()->rumah->id }}">
+                                                                            value="{{ $i->rumah_id }}">
+                                                                        <input type="hidden" name="warga_id"
+                                                                            value="{{ $i->warga_id }}">
                                                                         <input type="hidden" name="bulan"
                                                                             value="{{ $i->bulan }}">
                                                                         <input type="hidden" name="metode_pembayaran_id"
@@ -140,7 +154,8 @@
                                                                     {{ $i->status }}
                                                                 </span>
                                                             @elseif ($i->status === 'invalid')
-                                                                <span class="badge badge-danger rounded-2 fw-semibold fs-2">
+                                                                <span
+                                                                    class="badge badge-danger rounded-2 fw-semibold fs-2">
                                                                     {{ $i->status }}
                                                                 </span>
                                                             @endif
@@ -156,6 +171,7 @@
                                                                 data-toggle="modal" data-target="#modal_edit"
                                                                 data-id="{{ $i->id }}"
                                                                 data-rumah_id="{{ $i->rumah_id }}"
+                                                                data-warga_id="{{ $i->warga_id }}"
                                                                 data-bulan="{{ $i->bulan }}"
                                                                 data-metode_pembayaran="{{ $i->metode_pembayaran_id }}"
                                                                 data-total="{{ $i->total_bayar }}"

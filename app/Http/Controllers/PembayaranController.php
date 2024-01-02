@@ -25,8 +25,9 @@ class PembayaranController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
+            'warga_id' => 'required',
             'rumah_id' => 'required',
-            'bulan' => 'required|in:1,3,6,9',
+            'bulan' => 'required|in:1,2,3,4,5,6,7,8,9,10,11,12',
             'metode_pembayaran_id' => 'required',
             'bukti_pembayaran' => 'required|image|file|max:1024',
             'total_bayar' => 'required',
@@ -52,8 +53,9 @@ class PembayaranController extends Controller
     public function update(Request $request)
     {
         $validatedData = $request->validate([
+            'warga_id' => 'nullable',
             'rumah_id' => 'required',
-            'bulan' => 'required|in:1,3,6,9',
+            'bulan' => 'required|in:1,2,3,4,5,6,7,8,9,10,11,12',
             'metode_pembayaran_id' => 'required',
             'bukti_pembayaran' => 'nullable|image|file|max:1024',
             'total_bayar' => 'required',

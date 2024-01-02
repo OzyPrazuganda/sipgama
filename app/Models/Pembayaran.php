@@ -17,6 +17,7 @@ class Pembayaran extends Model
         'bukti_pembayaran',
         'status',
 
+        'warga_id',
         'rumah_id',
         'metode_pembayaran_id'
     ];
@@ -26,6 +27,11 @@ class Pembayaran extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function warga()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function rumah()
     {

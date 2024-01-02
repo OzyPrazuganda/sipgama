@@ -25,23 +25,22 @@
                     </div>
 
                     <div class="mb-2">
-                        <label for="blok_edit" class="form-label" style="font-size: 11pt">Blok</label>
+                        <label for="blok" class="form-label" style="font-size: 11pt">Blok</label>
                         <div>
-                            <select
-                                class="form-control @error('blok_edit') is-invalid @enderror rounded-2 form-control-sm"
-                                name="blok_edit" id="blok_edit">
+                            <select class="form-control @error('blok') is-invalid @enderror rounded-2 form-control-sm"
+                                name="blok" id="blok_edit">
                                 <option value="" selected disabled hidden>Pilih Blok
                                 </option>
-                                <option value="blok a">Blok A</option>
-                                <option value="blok b">Blok B</option>
-                                <option value="blok c">Blok C</option>
-                                <option value="blok d">Blok D</option>
-                                <option value="blok e">Blok E</option>
-                                <option value="blok f">Blok F</option>
-                                <option value="blok g">Blok G</option>
-                                <option value="blok h">Blok H</option>
-                                <option value="blok i">Blok I</option>
-                                <option value="blok j">Blok J</option>
+                                <option value="a">Blok A</option>
+                                <option value="b">Blok B</option>
+                                <option value="c">Blok C</option>
+                                <option value="d">Blok D</option>
+                                <option value="e">Blok E</option>
+                                <option value="f">Blok F</option>
+                                <option value="g">Blok G</option>
+                                <option value="h">Blok H</option>
+                                <option value="i">Blok I</option>
+                                <option value="j">Blok J</option>
                             </select>
                         </div>
                         @error('blok_edit')
@@ -55,16 +54,16 @@
                         <label for="status" class="form-label" style="font-size: 11pt">Status</label>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="status" id="status_edit_valid"
-                                value="valid">
+                                value="huni">
                             <label class="form-check-label" for="status_edit_valid">
-                                Valid
+                                Huni
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="status" id="status_edit_invalid"
-                                value="invalid">
+                                value="kosong">
                             <label class="form-check-label" for="status_edit_invalid">
-                                Invalid
+                                Kosong
                             </label>
                         </div>
                     </div>

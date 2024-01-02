@@ -11,9 +11,9 @@ return new class extends Migration {
     public function up(): void
     {
         schema::create('metode_pembayaran', function (Blueprint $table) {
-            $table->id();
-            $table->string('nomor_pembayaran')->nullable();
-            $table->string('nama');
+            $table->increments('id');
+            $table->string('nomor_pembayaran', 13)->nullable();
+            $table->string('nama', 50);
             $table->enum('metode_pembayaran', ['bri', 'bca', 'mandiri', 'dana', 'gopay', 'shopeepay', 'ovo', 'qris', 'ditempat']);
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();

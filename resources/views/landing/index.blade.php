@@ -23,13 +23,15 @@
     <link rel="stylesheet" href="{{ asset('uptown-master') }}/css/style.css">
 
     {{-- footer --}}
-    <link rel="stylesheet" href="{{ asset('bootstrap-footer-05') }}/css/style.css">
+    {{-- <link rel="stylesheet" href="{{ asset('bootstrap-footer-05') }}/css/style.css"> --}}
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Sipgama</a>
+            <a href="#" class="text-nowrap logo-img">
+                <img src="{{ asset('storage/files/Logo sipgama bulat.png') }}" width="75" />
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
@@ -37,7 +39,11 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
+                    <li class="nav-item">
+                        <a href="login" class="nav-link btn"
+                            style="border-radius: 8px;height: 40px;margin-top: 8px; display: flex;justify-content: center;align-items:
+                      center; background-color: #5D87FF; color: white">Login</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -45,12 +51,18 @@
     <!-- END nav -->
 
     <div class="hero-wrap ftco-degree-bg"
-        style="background-image: url('{{ asset('storage/files/Perumahan Villa Gading Copy.png') }}');"
+        style="background-image: url('{{ asset('storage/files/Perumahan Villa Gading Final.png') }}');"
         data-stellar-background-ratio="0.5">
         <div class="container">
 
+            <div class="row justify-content-center align-items-center">
+                <div class="text text-center ftco-animate" style="margin-top: 10%">
+                    <h1>Sistem Informasi Pengelolaan <br>Perumahan Villa Gading Mayang</h1>
+                </div>
+            </div>
+
             <div class="row slider-text justify-content-center align-items-center">
-                <div style="margin-top: -150px">
+                <div style="margin-top: -50%">
                     <section class="ftco-counter img" id="section-counter">
                         <div class="row">
                             <div class="col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
@@ -81,11 +93,6 @@
                     </section>
                 </div>
 
-                <div style="margin-top:-700px">
-                    <div class="text text-center ftco-animate">
-                        <h1>Sistem Informasi Pengelolaan <br>Perumahan Villa Gading Mayang</h1>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -105,7 +112,8 @@
                                 class="flaticon-piggy-bank"></span></div>
                         <div class="media-body py-md-4">
                             <h3>Validasi Iuran</h3>
-                            <p>Verifikasi pembayaran iuran warga melalui istem terintegrasi.</p>
+                            <p>Verifikasi pembayaran iuran warga melalui sistem terintegrasi dan tersentralisasi untuk
+                                pengelolaan perumahan.</p>
                         </div>
                     </div>
                 </div>
@@ -159,7 +167,7 @@
                 <div class="col-md-3 ftco-animate">
                     <div class="agent">
                         <div class="img">
-                            <img src="{{ asset('storage/files/Pos Villa Gading.png') }}" class="img-fluid"
+                            <img src="{{ asset('storage/files/Pos Villa Gading Final.png') }}" class="img-fluid"
                                 alt="Colorlib Template">
                         </div>
                         <div class="desc">
@@ -198,7 +206,7 @@
                 <div class="col-md-3 ftco-animate">
                     <div class="agent">
                         <div class="img">
-                            <img src="{{ asset('storage/files/Jalanan Villa Gading.png') }}" class="img-fluid"
+                            <img src="{{ asset('storage/files/Jalanan Villa Gading Final.png') }}" class="img-fluid"
                                 alt="Colorlib Template">
                         </div>
                         <div class="desc">
@@ -272,7 +280,9 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-4 text-lg-center site-logo order-1 order-lg-2 mb-3 mb-lg-0">
-                    <a href="#" class="m-0 p-0">SIPGAMA</a>
+                    <a href="#" class="text-nowrap logo-img">
+                        <img src="{{ asset('storage/files/Logo sipgama.png') }}" width="200" />
+                    </a>
                 </div>
                 <div class="col-lg-4 order-2 order-lg-1 mb-3 mb-lg-0">
                     <ul class="list-unstyled nav-links m-0 nav-left">
